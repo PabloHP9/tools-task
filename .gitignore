@@ -1,0 +1,48 @@
+# Logs
+logs/
+*.log
+
+# Node.js Dependencies
+node_modules/
+
+# Test Reports and Output
+allure-results/
+allure-report/
+webdriverio-report/
+mochawesome-report/
+
+# Screenshots or Error Snapshots
+errorShots/
+screenshots/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE Specific Files (e.g., VSCode, JetBrains, etc.)
+.vscode/
+.idea/
+*.swp
+
+# OS-Specific Files
+.DS_Store
+Thumbs.db
+
+# Temporary or Backup files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Build Artifacts (if you're bundling or using compilers)
+dist/
+build/
+
+# WebdriverIO Configuration or Cache Files
+wdio-*.log
+.cache/
+
+# Coverage Reports (if using nyc or istanbul for code coverage)
+coverage/
+.nyc_output/
