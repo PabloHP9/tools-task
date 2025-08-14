@@ -50,7 +50,14 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+        args: [
+            '--disable-infobars',           
+            '--window-size=1920,1080',     
+            '--start-maximized'            
+        ]
+    }
     }],
 
     //
@@ -129,7 +136,7 @@ export const config = {
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
         require: [
-            '',
+            'stepDefinitions/logIn.steps.js',
         ],
         //require: ['stepDefinitions/logi.steps.js'],
         //require: ['stepDefinitions/xd.steps.js'],
