@@ -1,12 +1,11 @@
 {
   "name": "at-task",
   "version": "1.0.0",
-  "type":  "module",
+  "type": "module",
   "description": "AT frameworks task",
   "main": "index.js",
   "scripts": {
     "test": "wdio run wdio.conf.js"
-    
   },
   "author": "Pablo Hernandez Perea",
   "license": "ISC",
@@ -15,5 +14,8 @@
     "@wdio/cucumber-framework": "^9.18.0",
     "@wdio/local-runner": "^9.18.4",
     "@wdio/spec-reporter": "^9.18.0"
+  },
+  "dependencies": {
+    "uuid": "^11.1.0"
   }
 }
