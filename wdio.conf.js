@@ -136,7 +136,7 @@ export const config = {
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
         require: [
-            'stepDefinitions/logIn.steps.js',
+           'stepDefinitions/singIn.steps.js',
         ],
         //require: ['stepDefinitions/logi.steps.js'],
         //require: ['stepDefinitions/xd.steps.js'],
