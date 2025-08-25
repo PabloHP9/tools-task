@@ -137,6 +137,7 @@ export const config = {
         // <string[]> (file/dir) require files before executing features
         require: [
            'stepDefinitions/singIn.steps.js',
+           'stepDefinitions/logIn.steps.js',
         ],
         //require: ['stepDefinitions/logi.steps.js'],
         //require: ['stepDefinitions/xd.steps.js'],
