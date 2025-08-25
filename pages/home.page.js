@@ -5,8 +5,23 @@ class homePage extends basePage {
         return $('a[href="/auth/login"]')
     }
 
+    get accountOptionsmenu() {
+        return $('#menu');
+    }
+
+    get singOutOption() {
+        return $('a[data-test="nav-sign-out"]')
+    }
+
+    async clickOnAccountOptions() {
+        await this.accountOptionsmenu.click();
+    }
+
     async clickOnSingIn() {
         await this.SingInLink.click();
+    }
+    async clickOnSingOut() {
+        await this.singOutOption.click();
     }
 
     openToolShop() {

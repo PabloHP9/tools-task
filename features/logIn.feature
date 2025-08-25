@@ -2,13 +2,15 @@ Feature: loging with an account
 
  Background:  
 
-      Given I open practicesoftwaretesting.com  
-
-      And I am on the login page 
+      Given I open practicesoftwaretesting.com home page
 
  Scenario: Sing in with existing account 
 
-      When I fill the login fields with my account credentials  
+      When I register an account
+
+      And I go to login
+
+      And I fill the login fields with my account credentials  
 
       And I Click on login  
 
@@ -16,7 +18,11 @@ Feature: loging with an account
 
  Scenario: Sing in with non-existing account 
 
-       When I fill the login fields with incorrect account credentials  
+       When I sing out
+
+       And I go to login
+
+       And I fill the login fields with incorrect account credentials  
 
        And I Click on login  
 

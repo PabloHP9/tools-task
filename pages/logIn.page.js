@@ -1,4 +1,5 @@
 import { basePage } from "./base.page";
+import sharedData from "../sharedData";
 class logInPage extends basePage {
 
     get registerLink() {
@@ -14,15 +15,20 @@ class logInPage extends basePage {
     }
 
     get submitButton() {
-        return $('.btnSubmit')
+        return $('.btnSubmit');
     }
 
     get loginErrorMessage() {
-        return $('.help-block')
+        return $('.help-block');
     }
 
-    async fillLoginEmail(loginEmail) {
-        await this.emailAddressField.addValue(loginEmail);
+    get homeLink() {
+        return $('a[data-test="nav-home"]')
+    }
+
+    async fillLoginEmail() {
+         const email = sharedData.getGeneratedEmail();
+        await this.emailAddressField.addValue(email);
     }
 
     async fillLoginPassword(loginPassword) {
@@ -36,9 +42,17 @@ class logInPage extends basePage {
     async clickOnSubmit() {
         await this.submitButton.click();
     }
+    
+    async clickHomeLink() {
+        await this.homeLink.click();
+    }
 
     async checkLoginError() {
         await expect(this.loginErrorMessage).toBeDisplayed();
+    }
+
+    openLogin() {
+        return super.open('https://practicesoftwaretesting.com/auth/login');
     }
 
     checkLogInPage() {
