@@ -6,17 +6,16 @@ Given('I open the main page of practicesoftwaretesting.com again', async () => {
     await homePage.checkHomePage();
 });
 
-When('I fill the search bar with exact product "Combination Pliers"', async () => {
-    await homePage.fillSearchBar('Cfsdfsdfgedgdsgdgsdg')
-})
-
-When('I fill the search bar with a non-existing product', async () => {
-    await homePage.fillSearchBar('ps5')
-})
-
-When('I click on search', async () => {
+When('I search exact product "Combination Pliers"', async () => {
+    await homePage.fillSearchBar('Cfsdfsdfgedgdsgdgsdg');
     await homePage.clickOnSearch();
 })
+
+When('I search a non-existing product', async () => {
+    await homePage.fillSearchBar('ps5');
+     await homePage.clickOnSearch();
+})
+
 
 Then('I see the searched product "Combination Pliers"', async () => {
     await homePage.checkToolResult();

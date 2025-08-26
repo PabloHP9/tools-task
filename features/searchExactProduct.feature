@@ -6,16 +6,12 @@ Feature: Search for exact product
 
  Scenario: Search exact existing product  
 
-      When I fill the search bar with exact product "Combination Pliers"
-
-      And I click on search
+      When I search exact product "Combination Pliers"
 
       Then I see the searched product "Combination Pliers"
 
 Scenario: Search a non-existing product 
 
-       When I fill the search bar with a non-existing product 
-
-       And I click on search
+       When I search a non-existing product 
 
       Then I see the message “There are no products found”
