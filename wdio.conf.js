@@ -43,22 +43,26 @@ export const config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 2,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
+    capabilities: [
+    {
         browserName: 'chrome',
         'goog:chromeOptions': {
-        args: [
-            '--disable-infobars',           
-            '--window-size=1920,1080',     
-            '--start-maximized'            
-        ]
+        args: ['--headless', '--disable-gpu', '--window-size=1920,1080', '--no-sandbox', '--disable-dev-shm-usage']}
+    },
+
+    {
+        browserName: 'firefox',
+        'moz:firefoxOptions': {
+        args: [ '-headless']}
     }
-    }],
+
+],
 
     //
     // ===================
@@ -119,7 +123,7 @@ export const config = {
     
     //
     // The number of times to retry the entire specfile when it fails as a whole
-    // specFileRetries: 1,
+     specFileRetries: 2,
     //
     // Delay in seconds between the spec file retry attempts
     // specFileRetriesDelay: 0,
@@ -141,8 +145,6 @@ export const config = {
            'stepDefinitions/changeLanguage.steps.js',
            'stepDefinitions/searchExactProduct.steps.js',
         ],
-        //require: ['stepDefinitions/logi.steps.js'],
-        //require: ['stepDefinitions/xd.steps.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
