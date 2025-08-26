@@ -37,8 +37,8 @@ class homePage extends basePage {
         return $('app-overview > div:nth-child(3) > div.col-md-9 > div.container > div');
     }
 
-    get combinationPliersProduct() {
-        return $('img[alt="Combination Pliers"]')
+    get chiselsProduct() {
+        return $('img[alt="Chisels Set"]')
     }
 
     async clickOnAccountOptions() {
@@ -83,7 +83,7 @@ class homePage extends basePage {
     }
 
     async checkToolResult() {
-        await expect(this.combinationPliersProduct).toBeDisplayed();
+        await expect(this.chiselsProduct).toBeDisplayed();
     }
 
  

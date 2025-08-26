@@ -6,9 +6,9 @@ Feature: Search for exact product
 
  Scenario: Search exact existing product  
 
-      When I search exact product "Combination Pliers"
+      When I search exact product "Chisels Set"
 
-      Then I see the searched product "Combination Pliers"
+      Then I see the searched product "Chisels Set"
 
 Scenario: Search a non-existing product 
 

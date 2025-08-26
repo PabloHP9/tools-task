@@ -6,8 +6,8 @@ Given('I open the main page of practicesoftwaretesting.com again', async () => {
     await homePage.checkHomePage();
 });
 
-When('I search exact product "Combination Pliers"', async () => {
-    await homePage.fillSearchBar('Cfsdfsdfgedgdsgdgsdg');
+When('I search exact product "Chisels Set"', async () => {
+    await homePage.fillSearchBar('Chisels Set');
     await homePage.clickOnSearch();
 })
 
@@ -17,7 +17,7 @@ When('I search a non-existing product', async () => {
 })
 
 
-Then('I see the searched product "Combination Pliers"', async () => {
+Then('I see the searched product "Chisels Set"', async () => {
     await homePage.checkToolResult();
 })
 
