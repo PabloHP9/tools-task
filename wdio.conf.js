@@ -139,6 +139,7 @@ export const config = {
            'stepDefinitions/singIn.steps.js',
            'stepDefinitions/logIn.steps.js',
            'stepDefinitions/changeLanguage.steps.js',
+           'stepDefinitions/searchExactProduct.steps.js',
         ],
         //require: ['stepDefinitions/logi.steps.js'],
         //require: ['stepDefinitions/xd.steps.js'],
