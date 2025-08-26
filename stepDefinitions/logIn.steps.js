@@ -2,26 +2,27 @@ import { Given,When,Then } from "@wdio/cucumber-framework";
 import homePage from "../pages/home.page";
 import singInPage from "../pages/singIn.page";
 import logInPage from "../pages/logIn.page";
+import user from "../data/user.json";
 
 Given('I open practicesoftwaretesting.com home page', async () => {
     await homePage.openToolShop();
-    await homePage.CheckHomePage();
+    await homePage.checkHomePage();
 })
 
 When('I register an account', async () => {
     await homePage.clickOnSingIn();
     await logInPage.clickOnRegisterLink();
-    await singInPage.fillFirstNameField('22323');
-    await singInPage.fillLastNameField('Doe');
-    await singInPage.fillDateOfBirthField('2000-10-31');
-    await singInPage.fillstreetField('reddor');
-    await singInPage.fillPostalCodeField(333333);
-    await singInPage.fillCityField('pisos picados');
-    await singInPage.fillStateField('solid');
+    await singInPage.fillFirstNameField(user.name1);
+    await singInPage.fillLastNameField(user.lastName1);
+    await singInPage.fillDateOfBirthField(user.dateOfBirth1);
+    await singInPage.fillstreetField(user.street2);
+    await singInPage.fillPostalCodeField(user.postalCode1);
+    await singInPage.fillCityField(user.city1);
+    await singInPage.fillStateField(user.state1);
     await singInPage.fillCountryField();
-    await singInPage.fillPhoneField(1234567890);
+    await singInPage.fillPhoneField(user.phone1);
     await singInPage.fillemailField();
-    await singInPage.fillPasswordField('Fornite22*');
+    await singInPage.fillPasswordField(user.password1);
     await singInPage.clickOnRegister();
     await logInPage.checkLoginPageUrl();
     await logInPage.clickHomeLink();
@@ -40,12 +41,12 @@ When('I go to login', async () => {
 
 When('I fill the login fields with my account credentials', async () => {
     await logInPage.fillLoginEmail();
-    await logInPage.fillLoginPassword('Fornite22*');
+    await logInPage.fillLoginPassword(user.password1);
 })
 
 When('I fill the login fields with incorrect account credentials', async () => {
     await logInPage.fillLoginEmail('Kevinwrong@email.com');
-    await logInPage.fillLoginPassword('locura123*');
+    await logInPage.fillLoginPassword(user.password2);
 })
 
 When('I Click on login', async () => {

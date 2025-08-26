@@ -20,6 +20,7 @@ class homePage extends basePage {
     async clickOnSingIn() {
         await this.SingInLink.click();
     }
+    
     async clickOnSingOut() {
         await this.singOutOption.click();
     }
@@ -28,8 +29,8 @@ class homePage extends basePage {
         return super.open('https://practicesoftwaretesting.com/');
     }
 
-    CheckHomePage() {
-        return super.CheckPage('Practice Software Testing - Toolshop - v5.0')
+    checkHomePage() {
+        return super.checkPage('Practice Software Testing - Toolshop - v5.0')
     }
 }
 export default new homePage();

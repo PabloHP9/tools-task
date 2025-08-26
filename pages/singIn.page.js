@@ -1,6 +1,6 @@
 import { basePage } from "./base.page"
-import { v4 as uuidv4 } from "uuid"
-import sharedData from "../sharedData"
+import { generateRandomEmail } from "../utils/emailGenerator"
+import sharedData from "../utils/sharedData"
 class singInPage extends basePage {
     get firstNameField() {
         return $('#first_name')
@@ -91,7 +91,7 @@ class singInPage extends basePage {
     }
 
     async fillemailField() {
-        const email = `testuser_${uuidv4()}@example.com`;
+        const email = generateRandomEmail();
         sharedData.setGeneratedEmail(email);
         await this.emailAddressField.addValue(email);
     }
@@ -117,7 +117,7 @@ class singInPage extends basePage {
     }
 
     checkSingInPage() {
-        return super.CheckPage('Register - Practice Software Testing - Toolshop - v5.0')
+        return super.checkPage('Register - Practice Software Testing - Toolshop - v5.0')
     }
 }
 

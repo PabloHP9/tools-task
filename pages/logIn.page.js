@@ -1,5 +1,5 @@
 import { basePage } from "./base.page";
-import sharedData from "../sharedData";
+import sharedData from "../utils/sharedData";
 class logInPage extends basePage {
 
     get registerLink() {
@@ -27,7 +27,7 @@ class logInPage extends basePage {
     }
 
     async fillLoginEmail() {
-         const email = sharedData.getGeneratedEmail();
+        const email = sharedData.getGeneratedEmail();
         await this.emailAddressField.addValue(email);
     }
 
@@ -42,7 +42,7 @@ class logInPage extends basePage {
     async clickOnSubmit() {
         await this.submitButton.click();
     }
-    
+
     async clickHomeLink() {
         await this.homeLink.click();
     }
@@ -56,7 +56,7 @@ class logInPage extends basePage {
     }
 
     checkLogInPage() {
-        return super.CheckPage('Register - Practice Software Testing - Toolshop - v5.0');
+        return super.checkPage('Register - Practice Software Testing - Toolshop - v5.0');
     }
 
     checkLoginPageUrl() {
@@ -66,7 +66,7 @@ class logInPage extends basePage {
         return super.checkUrl('https://practicesoftwaretesting.com/account');
     }
 
-    
+
 
 
 }
