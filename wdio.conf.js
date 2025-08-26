@@ -138,6 +138,7 @@ export const config = {
         require: [
            'stepDefinitions/singIn.steps.js',
            'stepDefinitions/logIn.steps.js',
+           'stepDefinitions/changeLanguage.steps.js',
         ],
         //require: ['stepDefinitions/logi.steps.js'],
         //require: ['stepDefinitions/xd.steps.js'],

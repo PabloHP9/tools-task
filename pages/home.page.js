@@ -13,6 +13,18 @@ class homePage extends basePage {
         return $('a[data-test="nav-sign-out"]')
     }
 
+    get languageButton() {
+        return $('//*[@id="language"]')
+    }
+
+    get languageMenu() {
+        return $('//*[@id="dropdown-animated"]')
+    }
+
+    get languageEsItem() {
+        return $('a[data-test="lang-es"]')
+    }
+
     async clickOnAccountOptions() {
         await this.accountOptionsmenu.click();
     }
@@ -25,6 +37,22 @@ class homePage extends basePage {
         await this.singOutOption.click();
     }
 
+    async clickLanguageButton() {
+        await this.languageButton.click();
+    }
+
+    async checkLanguageMenu() {
+        await expect(this.languageMenu).toBeDisplayed();
+    }
+
+    async clickOnEsItem() {
+        await this.languageEsItem.click();
+    }
+
+    async checkLanguageChange() {
+         await expect(this.SingInLink).toHaveText('Iniciar sesión');
+    }
+ 
     openToolShop() {
         return super.open('https://practicesoftwaretesting.com/');
     }
