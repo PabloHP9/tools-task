@@ -2,6 +2,10 @@ import page from "./base.page";
 import { expect } from "chai";
 class homePage extends page {
 
+    get contactLink() {
+        return $('a[href="/contact"]')
+    }
+    
     get sortingOptionAToZ() {
         return $('.form-select option[value="name,asc"]')
     }
@@ -43,7 +47,7 @@ class homePage extends page {
     }
 
     get powerToolsCheckbox() {
-        return $('input[data-test="category-01K3S0TEW9GCEF48QTP92Y2YTG"]')
+        return $('//*[@id="filters"]/fieldset[1]/div[2]/label/input')
     }
 
     get forgeflexToolsCheckbox() {
@@ -72,6 +76,10 @@ class homePage extends page {
 
     async clickOnForgeflex() {
         await this.forgeflexToolsCheckbox.click();
+    }
+
+    async clickOnContact() {
+        await this.contactLink.click();
     }
 
     async checkSortAToZ() {
