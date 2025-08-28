@@ -34,6 +34,22 @@ class homePage extends page {
         return $('img[alt="Washers"]')
     }
 
+    get sheetSanderProduct() {
+        return $('img[alt="Sheet Sander"]')
+    }
+
+    get courtHammerProduct() {
+        return $('img[alt="Court Hammer"]')
+    }
+
+    get powerToolsCheckbox() {
+        return $('input[data-test="category-01K3S0TEW9GCEF48QTP92Y2YTG"]')
+    }
+
+    get forgeflexToolsCheckbox() {
+        return $('input[name="brand_id"]')
+    }
+
     async clickOnSortAToZ() {
         await this.sortingOptionAToZ.click();
     }
@@ -48,6 +64,14 @@ class homePage extends page {
 
      async clickOnSortLowToHigh() {
         await this.sortingOptionLowToHigh.click();
+    }
+
+    async clickOnPowerTools() {
+        await this.powerToolsCheckbox.click();
+    }
+
+    async clickOnForgeflex() {
+        await this.forgeflexToolsCheckbox.click();
     }
 
     async checkSortAToZ() {
@@ -75,6 +99,20 @@ class homePage extends page {
         await this.washersProduct.waitForDisplayed({ timeout: 5000 });
         
         const isDisplayed = await this.washersProduct.isDisplayed();
+        expect(isDisplayed).to.be.true;
+    }
+
+    async checkPowerToolsFilter() {
+        await this.sheetSanderProduct.waitForDisplayed({ timeout: 5000 });
+        
+        const isDisplayed = await this.sheetSanderProduct.isDisplayed();
+        expect(isDisplayed).to.be.true;
+    }
+
+    async checkForgeFlexFilter() {
+        await this.courtHammerProduct.waitForDisplayed({ timeout: 5000 });
+        
+        const isDisplayed = await this.courtHammerProduct.isDisplayed();
         expect(isDisplayed).to.be.true;
     }
 
