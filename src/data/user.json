@@ -1,0 +1,22 @@
+{
+    "name1": "john",
+    "lastName1": "Doe",
+    "dateOfBirth1": "2000-10-31",
+    "street1": "oak street",
+    "postalCode1": 333333,
+    "city1": "new york",
+    "state1": "arizona",
+    "phone1": 1234567890,
+    "password1": "Attask1#",
+
+    "name2": "jane",
+    "lastName2": "Doi",
+    "dateOfBirth2": "2000-10-31",
+    "street2": "pine street",
+    "postalCode2": 222222,
+    "city2": "chicago",
+    "state2": "california",
+    "phone2": 9876543210,
+    "password2": "Attask2#"
+
+}
