@@ -5,7 +5,7 @@
   "description": "AT frameworks task",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run wdio.conf.js"
+    "cucumber-tests": "wdio run wdio.conf.js"
   },
   "author": "Pablo Hernandez Perea",
   "license": "ISC",
