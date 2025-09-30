@@ -5,7 +5,7 @@
   "description": "chai and mocha implementation task",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run src/config/wdio.conf.js"
+    "chai-test": "wdio run src/config/wdio.conf.js"
    
   },
   "author": "Pablo Hernandez Perea",
